@@ -1,4 +1,4 @@
-module git.tcp.direct/kayos/sendkeys
+module github.com/EgosOwn/sendkeys
 
 go 1.17
 
