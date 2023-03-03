@@ -124,3 +124,24 @@ func (kb *KBWrap) Type(s string) error {
 	}
 	return nil
 }
+
+func (kb *KBWrap) KeyDown(k string) error {
+
+	key := kb.strToKeys(k)
+	if !kb.check() {
+		return errors.New(compoundErr(kb.errors))
+	}
+	kb.set(key[0])
+	kb.down()
+	return nil
+}
+
+func (kb *KBWrap) KeyUp(k string) error {
+	key := kb.strToKeys(k)
+	if !kb.check() {
+		return errors.New(compoundErr(kb.errors))
+	}
+	kb.set(key[0])
+	kb.up()
+	return nil
+}
